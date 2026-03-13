@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+# Ubuntu jammy is using linker optimizations that make some of the test to
+# segfault. See https://github.com/gazebosim/gz-physics/issues/330
+CXXFLAGS:=$(filter-out -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects,$(CXXFLAGS))
+LDFLAGS:=$(filter-out -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects,$(LDFLAGS))
+
+%:
+	dh $@ --no-parallel
+
+override_dh_auto_configure:
+# Skip dartsim on armhf due to lack of support for 32bits in dart upstream
+ifeq ($(DEB_HOST_ARCH),armhf)
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo -DSKIP_dartsim=true
+else
+	dh_auto_configure -- \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+endif
+
+# test cannot run in parallel
+# arm64 problems https://github.com/gazebosim/gz-physics/issues/70
+override_dh_auto_test:
+ifeq ($(DEB_HOST_ARCH),arm64)
+	true
+else
+	dh_auto_test --max-parallel=1
+endif
+
+# Execute doc creation to export at least the doxygen tag file
+override_dh_auto_build:
+	dh_auto_build -- doc
+	dh_auto_build
+
+override_dh_auto_install:
+	dh_auto_install
+	install -d debian/tmp/usr/share/gz/gz-physics/
+	install ./obj-*/*.tag.xml debian/tmp/usr/share/gz/gz-physics/

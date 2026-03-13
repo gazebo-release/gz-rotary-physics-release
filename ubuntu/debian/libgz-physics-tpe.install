@@ -1,0 +1,2 @@
+usr/lib/*/lib*-physics-tpe-plugin*.so*
+usr/lib/*/*-physics-[0-99]/engine-plugins/lib*-physics*-tpe-plugin*.so*

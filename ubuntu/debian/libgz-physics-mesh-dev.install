@@ -1,0 +1,3 @@
+usr/include/*/physics*/*/physics/mesh/*
+usr/lib/*/cmake/*-physics-mesh/*
+usr/lib/*/pkgconfig/*-physics-mesh.pc

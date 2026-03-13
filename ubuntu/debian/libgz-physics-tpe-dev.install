@@ -1,0 +1,5 @@
+usr/include/*/physics*/*/physics/tpe-plugin/*
+usr/lib/*/cmake/*-physics-tpe-plugin/*
+usr/lib/*/cmake/*-physics-tpe/*
+usr/lib/*/pkgconfig/*-physics-tpe-plugin.pc
+usr/lib/*/pkgconfig/*-physics-tpe.pc

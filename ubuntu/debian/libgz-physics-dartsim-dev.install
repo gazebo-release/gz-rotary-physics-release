@@ -1,0 +1,3 @@
+usr/include/*/physics*/*/physics/dartsim*/*
+usr/lib/*/cmake/*-physics-dartsim*/*
+usr/lib/*/pkgconfig/*-physics-dartsim*.pc

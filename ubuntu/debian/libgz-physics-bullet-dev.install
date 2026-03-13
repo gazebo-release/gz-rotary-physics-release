@@ -1,0 +1,3 @@
+usr/include/*/physics*/*/physics/bullet*/*
+usr/lib/*/cmake/*-physics-bullet*/*
+usr/lib/*/pkgconfig/*-physics-bullet*.pc

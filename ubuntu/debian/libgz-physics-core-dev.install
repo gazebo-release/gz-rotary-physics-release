@@ -1,0 +1,7 @@
+usr/include/*/physics[0-99]/*/physics.hh
+usr/include/*/physics[0-99]/*/physics/*.hh
+usr/include/*/physics[0-99]/gz/physics/detail/*.hh
+usr/lib/*/lib*-physics.so
+usr/lib/*/pkgconfig/*-physics.pc
+usr/lib/*/cmake/*-physics/*-physics*
+usr/libexec/*

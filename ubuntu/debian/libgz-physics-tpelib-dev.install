@@ -1,0 +1,3 @@
+usr/include/*/physics*/*/physics/tpelib/*
+usr/lib/*/cmake/*-physics-tpelib/*
+usr/lib/*/pkgconfig/*-physics-tpelib.pc
