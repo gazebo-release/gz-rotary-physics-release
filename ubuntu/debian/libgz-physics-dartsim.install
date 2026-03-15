@@ -1,2 +1,2 @@
 usr/lib/*/lib*-physics-dartsim*.so*
-usr/lib/*/*-physics-[0-99]/engine-plugins/lib*-physics*-dartsim*.so*
+usr/lib/*/gz-physics/engine-plugins/libgz-physics-dartsim.so*
