@@ -1,2 +1,2 @@
-usr/lib/*/libgz-physics-bullet.so*
-usr/lib/*/gz-physics/engine-plugins/libgz-physics-bullet.so*
+usr/lib/*/lib*-physics-bullet*.so*
+usr/lib/*/gz-physics/engine-plugins/lib*-physics*bullet*.so*
