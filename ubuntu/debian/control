@@ -307,7 +307,7 @@ Description: Gazebo Physics classes and functions for robot apps - Metapackage
  .
  Metapackage, all development files
 
-Package: gz-rotary-physics
+Package: libgz-rotary-physics-dev
 Depends: libgz-physics-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -315,7 +315,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: gz-rotary-physics-core
+Package: libgz-rotary-physics-core-dev
 Depends: libgz-physics-core-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
