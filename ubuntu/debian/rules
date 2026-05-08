@@ -10,12 +10,16 @@ LDFLAGS:=$(filter-out -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects,
 
 override_dh_auto_configure:
 # Skip dartsim on armhf due to lack of support for 32bits in dart upstream
+# Skip mujoco since it is not yet installed to any packages
 ifeq ($(DEB_HOST_ARCH),armhf)
 	dh_auto_configure -- \
-		-DCMAKE_BUILD_TYPE=RelWithDebInfo -DSKIP_dartsim=true
+		-DSKIP_dartsim=true \
+		-DSKIP_mujoco=true \
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 else
 	dh_auto_configure -- \
-	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+		-DSKIP_mujoco=true \
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 endif
 
 # test cannot run in parallel
